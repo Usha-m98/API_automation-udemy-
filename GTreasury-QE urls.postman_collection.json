@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "0b9de9b6-0d5e-4f79-bc42-8f3eb7b59539",
+		"name": "GTreasury-QE urls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AP: Process API",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://ms-api-le.test.subway.com/subway-gt-process-api-qe/api/v1/payments/payables",
+					"protocol": "https",
+					"host": [
+						"ms-api-le",
+						"test",
+						"subway",
+						"com"
+					],
+					"path": [
+						"subway-gt-process-api-qe",
+						"api",
+						"v1",
+						"payments",
+						"payables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AR: Process API",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "auth_qe",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "GTPAPI",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://ms-api-le.test.subway.com/subway-gt-process-api-qe/api/v1/payments/receivables",
+					"protocol": "https",
+					"host": [
+						"ms-api-le",
+						"test",
+						"subway",
+						"com"
+					],
+					"path": [
+						"subway-gt-process-api-qe",
+						"api",
+						"v1",
+						"payments",
+						"receivables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AR: FundTransfer API",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "GTPAPI",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "auth_qe",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"DateType\" : \"P\",\r\n  \"StartDate\":\"2020-06-30\",\r\n  \"EndDate\":\"2020-06-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ms-api-le.test.subway.com/subway-gt-process-api-qe/api/v1/payments/receivables/bankStatus",
+					"protocol": "https",
+					"host": [
+						"ms-api-le",
+						"test",
+						"subway",
+						"com"
+					],
+					"path": [
+						"subway-gt-process-api-qe",
+						"api",
+						"v1",
+						"payments",
+						"receivables",
+						"bankStatus"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
